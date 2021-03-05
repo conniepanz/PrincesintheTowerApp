@@ -1,11 +1,20 @@
 const mongoose = require('mongoose')
 
-const exampleSchema = new mongoose.Schema({
+const suspectsSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
   },
-  text: {
+  reason: {
+    type: String,
+    required: true
+
+  },
+  probability: {
     type: String,
     required: true
   },
@@ -18,4 +27,4 @@ const exampleSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Example', exampleSchema)
+module.exports = mongoose.model('Suspects', suspectsSchema)
