@@ -1,203 +1,116 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+### The Princes in The Tower: Who Did It?
+In 1485, two young Princes disappeared from the Tower of London. To this day, no one can say for sure what happened to them. Was it their uncle, King Richard III, who killed them to take the crown? Was it their cousin the Duke of Buckingham to clear his path to the throne? Was it rival claimant and future King Henry Tudor, who viewed them as a threat? No one can say for sure. But here is a forum for you to post your theory as to why they are gone.
 
-# PrincesintheTowerApp
+This is my second project at General Assembly and my goal was to create a full stack web application hosted on Github pages with an API hosted on Heroku. The goals were to:
 
-A template for starting projects with `express` as an API. Includes
-authentication and common middlewares.
+* Build a single-page application (SPA) with basic user authentication (sign up, sign in, sign out, change password) that interacts with a custom API that you build
 
-## Installation
+* Build an app that can create, read, update, and delete data in a database
 
-1. [Download](../../archive/master.zip) this template.
-1. Move the .zip file to your `sei/projects/` directory and Unzip it (creating a
-   folder) -- **NOTE:** if the folder was already unzipped, use the `mv` command
-   line to move it to the `sei/projects/` directory.
-1. Rename the directory from PrincesintheTowerApp -> your-app-name.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Move into the new project and `git init`.
-1. Replace all instances of `'PrincesintheTowerApp'` with your app name.
-1. Install dependencies with `npm install`.
-1. Ensure that you have `nodemon` installed by running `npm install -g nodemon`.
-1. Ensure the API is functioning properly by running `npm run server`.
-1. Once everything is working, make an initial commit.
-1. Follow the steps in [express-api-deployment-guide](https://git.generalassemb.ly/ga-wdi-boston/express-api-deployment-guide)
+* Learn to create user stories and wireframes (before writing code) as part of planning out your app.
 
-## Structure
+* Learn to confidently present your work to a technical audience (5-10 minute presentation)
 
-Dependencies are stored in [`package.json`](package.json).
 
-The most important file for understanding the structure of the template is
-`server.js`. This is where the actual Express `app` object is created, where
-the middlewares and routes are registered, and more. To register a routefile,
-follow the pattern established here with `exampleRoutes` and `userRoutes`. If
-you want to add any middlewares to your app, do that here.
+* Links
 
-The `app` directory contains models and route files. Models are simply Mongoose
-models. To create your own, follow the patterns established in
-`app/models/example.js`. Route files are somewhat similar to controllers in
-Rails, but they cover more functionality, including serialization and deciding
-which HTTP verbs to accept and what to do with them.
+* Front End Repo (https://princesinthetower.herokuapp.com)
 
-The `config` directory holds just `db.js`, which is where you specify the name
-and URL of your database.
+* Back End Repo (https://github.com/conniepanz/PrincesintheTowerApp)
 
-The `lib` directory is for code that will be used in other places in the
-application. The token authentication code is stored in `lib/auth.js`. The
-other files in `lib` deal with error handling. `custom_errors.js` is where all
-the different custom classes of errors are created. If you need some other kind
-of error message, you can add it here. There are also some functions defined
-here that are used elsewhere to check for errors. `lib/error_handler.js` is a
-function that will be used in all your `.catch`es. It catches errors, and sets
-the response status code based on what type of error got thrown.
+* Deployed Client ( https://conniepanz.github.io/PrincesintheTower-client/)
 
-You probably will only need to interact with files in `app/models`,
-`app/routes`, and `server.js`. You'll need to edit `db/config.js` just once,
-to change the name of your app.
+* Deployed API (https://princesinthetower.herokuapp.com)
 
-## Tasks
+Planning: In order to plan, I designed wireframes of what I wanted to include in the project. I drew an ERD and wrote out user stories. I followed the schedule that GA set out for me.
 
-Instead of `grunt`, this template uses `npm` as a task runner. This is more
-conventional for modern Express apps, and it's handy because we'll definitely
-use `npm` anyway. These are the commands available:
+Challenges: I had many challenges on this project and I had to scale back my ambitions to make it work.
+## Schedule
+ # Planning & Set Up
+ * Review full-stack-project-practice
+ * Review full-stack-project-modeling-lab
+ * Create User Stories
+ * Create Wire Frames
+ * Create ERD
 
-| Command                | Effect                                                                                                      |
-|------------------------|-------------------------------------------------------------------------------------------------------------|
-| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
-| `npm test`             | Runs automated tests.                                                                                       |
-| `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
+# API
 
-## API
+* Download Express API Template
+* Create a Github Repository
+* Deploy to Heroku
 
-Use this as the basis for your own API documentation. Add a new third-level
-heading for your custom entities, and follow the pattern provided for the
-built-in user authentication documentation.
+# Client
 
-Scripts are included in [`curl-scripts`](curl-scripts) to test built-in actions.
-Add your own scripts to test your custom API.
+ * Download Browser Template
+ * Create a Github Repository
+ * Deploy to Github Pages
 
-### Authentication
+ # Back-End
+ * CRUD your resource
+ *Test your resource's end points with curl scripts
+ * Add the relationship to a User
+ * Add User ownership to resource controller
+ * Test your resource's end points with curl scripts
 
-| Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
-| POST   | `/sign-up`             | `users#signup`    |
-| POST   | `/sign-in`             | `users#signin`    |
-| PATCH  | `/change-password/` | `users#changepw`  |
-| DELETE | `/sign-out/`        | `users#signout`   |
+# Front-End
+ * Sign Up (curl then web app)
+ * Sign In (curl then web app)
+ * Change Password (curl then web app)
+ * Sign Out (curl then web page)
+ * All API calls have success or failure messages
+ * Review query-ajax-post
+ * Create resource (curl then web app)
+ * Get all of their owned resources (curl then web app)
+ * Delete single resource (curl then web app)
+ * Update single resource (curl then web app)
 
-#### POST /sign-up
+# Final Touches
+ * README
+ * Troubleshoot/Debug
+ * Style
 
-Request:
+ ### User Stories
 
-```sh
-curl --include --request POST http://localhost:4741/sign-up \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "an@example.email",
-      "password": "an example password",
-      "password_confirmation": "an example password"
-    }
-  }'
-```
+ As a user, I want to be able to sign up and have my information stored.
 
-```sh
-curl-scripts/sign-up.sh
-```
+ As a user, I want to be able to sign in and have my information stored.
 
-Response:
+ As a user, if I forget or misplace my password, I want to be able to change passwords.
 
-```md
-HTTP/1.1 201 Created
-Content-Type: application/json; charset=utf-8
+ As a user, I want to log out.
 
-{
-  "user": {
-    "id": 1,
-    "email": "an@example.email"
-  }
-}
-```
+ As a user, I want to read about the Princes in the Tower.
 
-#### POST /sign-in
+ As a user, I want enter a suspect and the reason why I suspect them.
 
-Request:
+ As a user, I want to update the suspect form.
 
-```sh
-curl --include --request POST http://localhost:4741/sign-in \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "an@example.email",
-      "password": "an example password"
-    }
-  }'
-```
+ As a user, I want to view all of the suspects I entered.
 
-```sh
-curl-scripts/sign-in.sh
-```
+ ### Technologies Used
 
-Response:
+ * html
+ * css
+ * Boostrap
+ * Node.js
+ * Express
+ * Mongo DB
+ * Mongoose
+ * Herokou
+ * JQuery
+ * Ajax
 
-```md
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
+ ### Unsolved Problems
 
-{
-  "user": {
-    "id": 1,
-    "email": "an@example.email",
-    "token": "33ad6372f795694b333ec5f329ebeaaa"
-  }
-}
-```
+ * The layout is clunky. I want to be able to dynamically delete and update.
+ * My probability feature only works part of the time.
+ * The style is not completed.
 
-#### PATCH /change-password/
+ ### Plan for the Future
+ * Improve the styling
+ * Dynamically update and delete
+ * Add suspect slideshow with info on each suspect
+ * Create a message board so people can respond with comments
 
-Request:
-
-```sh
-curl --include --request PATCH http://localhost:4741/change-password/ \
-  --header "Authorization: Bearer $TOKEN" \
-  --header "Content-Type: application/json" \
-  --data '{
-    "passwords": {
-      "old": "an example password",
-      "new": "super sekrit"
-    }
-  }'
-```
-
-```sh
-TOKEN=33ad6372f795694b333ec5f329ebeaaa curl-scripts/change-password.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 204 No Content
-```
-
-#### DELETE /sign-out/
-
-Request:
-
-```sh
-curl --include --request DELETE http://localhost:4741/sign-out/ \
-  --header "Authorization: Bearer $TOKEN"
-```
-
-```sh
-TOKEN=33ad6372f795694b333ec5f329ebeaaa curl-scripts/sign-out.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 204 No Content
-```
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+ ### ERD
+ [ERD] (https://1drv.ms/p/s!Aldn8-8it-QbdJwOerjpsb5BVrc)

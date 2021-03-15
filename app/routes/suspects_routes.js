@@ -31,7 +31,9 @@ const router = express.Router()
 // GET /examples
 router.get('/suspects', requireToken, (req, res, next) => {
   const userId = req.user._id
+  console.log(req.user)
   console.log(userId)
+  console.log(req.body)
   Suspects.find({ owner: userId })
     .then(suspects => {
       // `examples` will be an array of Mongoose documents
@@ -100,6 +102,7 @@ router.patch('/suspects/:id', requireToken, removeBlanks, (req, res, next) => {
 // DESTROY
 // DELETE /examples/5a7db6c74d55bc51bdf39793
 router.delete('/suspects/:id', requireToken, (req, res, next) => {
+  console.log('req id', req.params.id)
   Suspects.findById(req.params.id)
     .then(handle404)
     .then(suspects => {

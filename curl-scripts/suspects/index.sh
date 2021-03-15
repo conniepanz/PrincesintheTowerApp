@@ -9,4 +9,3 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Bearer ${TOKEN}"
 
 echo
-T
