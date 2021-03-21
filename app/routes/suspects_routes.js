@@ -31,9 +31,6 @@ const router = express.Router()
 // GET /examples
 router.get('/suspects', requireToken, (req, res, next) => {
   const userId = req.user._id
-  console.log(req.user)
-  console.log(userId)
-  console.log(req.body)
   Suspects.find({ owner: userId })
     .then(suspects => {
       // `examples` will be an array of Mongoose documents
