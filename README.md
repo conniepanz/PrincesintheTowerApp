@@ -103,7 +103,7 @@ Challenges: I had many challenges on this project and I had to scale back my amb
  ### Unsolved Problems
 
  * The layout is clunky. I want to be able to dynamically delete and update.
- * My probability feature only works part of the time.
+ * The Login section needs to be better formatted.
  * The style is not completed.
 
  ### Plan for the Future
